@@ -73,7 +73,7 @@ if __name__ == '__main__':
         ['娛樂', 'amov']
     ]
     for b in tqdm(board):
-        time_bound = datetime.now() - timedelta(days=7)
+        time_bound = datetime.now() - timedelta(days=1)
         links = get_links(b)
         data = get_data(links, time_bound)
         json.dump(data, open(f'crawlers/data/cna/{b[0]}_{time_bound.strftime("%Y%m%d")}.json', 'w', encoding='utf8'))

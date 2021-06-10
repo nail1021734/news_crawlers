@@ -79,7 +79,7 @@ if __name__ == "__main__":
     ]
     for b in tqdm(board):
         for page in tqdm(range(1, 501, 50)):
-            time_bound = datetime.now() - timedelta(days=7)
+            time_bound = datetime.now() - timedelta(days=1)
             links = get_links(b, page, page+50)
             data = get_data(links, time_bound)
             json.dump(data, open(f'crawlers/data/ntdtv/{b[0]}_p{page}-p{page+50}_{time_bound.strftime("%Y%m%d")}.json', 'w', encoding='utf8'))

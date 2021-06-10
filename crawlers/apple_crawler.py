@@ -65,9 +65,12 @@ if __name__ == '__main__':
     ]
 
     for board in tqdm(boards):
-        time_bound = datetime.now() - timedelta(days=7)
+        time_bound = datetime.now() - timedelta(days=1)
         links = get_links(board, time_bound)
         data = get_data(links)
         file_path = os.path.join('crawlers', 'data', 'apple', f'{board[0]}.json')
-        json.dump(data, open(file_path, 'w', encoding='utf8'))
+        try:
+            json.dump(data, open(file_path, 'w', encoding='utf8'))
+        except:
+            continue
 

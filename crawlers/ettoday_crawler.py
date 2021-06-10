@@ -39,7 +39,7 @@ def get_links(time_bound):
         last_time = result[-1]['time'].split(' ')[0].split('/')
         now_date = datetime(year=int(last_time[0]), month=int(last_time[1]), day=int(last_time[2]))
         data = get_data(result)
-        json.dump(data, open(f'data/ettoday/{filename}.json', 'w', encoding='utf8'))
+        json.dump(data, open(f'crawlers/data/ettoday/{filename}.json', 'w', encoding='utf8'))
 
 def get_data(links):
     result = []
@@ -72,5 +72,5 @@ def get_data(links):
     return result
 
 if __name__ == '__main__':
-    time_bound = datetime.now() - timedelta(days=7)
+    time_bound = datetime.now() - timedelta(days=1)
     get_links(time_bound)

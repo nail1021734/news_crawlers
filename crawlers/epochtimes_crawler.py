@@ -83,7 +83,7 @@ if __name__ == '__main__':
     for board in tqdm(boards):
         interval = 50
         for page in range(2, 800, interval):
-            time_bound = datetime.now() - timedelta(days=7)
+            time_bound = datetime.now() - timedelta(days=1)
             links = get_links(board, page, page+interval)
             data = get_data(links, time_bound)
             if data == []:

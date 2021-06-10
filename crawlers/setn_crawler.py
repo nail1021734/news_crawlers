@@ -108,7 +108,7 @@ if __name__ == "__main__":
     data_path = os.path.join('crawlers', 'data', 'setn')
     for file_name, _id in tqdm(list(group_id.items())):
         links = get_links(page_group_id=_id)
-        time_bound = datetime.now() - timedelta(days=7)
+        time_bound = datetime.now() - timedelta(days=1)
         result = get_data(links, time_bound)
         file_path = os.path.join(data_path, f'{file_name}.json')
         with open(file_path, 'w', encoding='utf8') as output_file:

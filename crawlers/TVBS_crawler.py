@@ -86,7 +86,7 @@ if __name__ == '__main__':
 
     for board in tqdm(boards):
         now_date = datetime.now()
-        time_bound = datetime.now() - timedelta(days=7)
+        time_bound = datetime.now() - timedelta(days=1)
         links = get_links(board, nowdate=now_date, timebound=time_bound)
         data = get_data(links)
         json.dump(data, open(f'crawlers/data/TVBS/{board}_{time_bound.strftime("%Y%m%d")}.json', 'w', encoding='utf8'))

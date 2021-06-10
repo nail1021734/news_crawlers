@@ -86,9 +86,9 @@ if __name__ == "__main__":
     ]
     for b_name in tqdm(board):
         links = get_links(b_name)
-        time_bound = datetime.now() - timedelta(days=7)
+        time_bound = datetime.now() - timedelta(days=1)
         result = get_data(links, time_bound)
-        filename = os.path.join('crawler', 'data', 'yahoo', f'{b_name[0]}_{time_bound.strftime("%Y%m%d")}.json')
+        filename = os.path.join('crawlers', 'data', 'yahoo', f'{b_name[0]}_{time_bound.strftime("%Y%m%d")}.json')
         try:
             with open(filename, 'w', encoding='utf8') as input_file:
                 json.dump(result, input_file)

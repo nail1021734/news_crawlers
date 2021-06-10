@@ -81,7 +81,7 @@ if __name__ == '__main__':
         'novelty',
     ]
     for board in tqdm(boards):
-        time_bound = datetime.now() - timedelta(days=7)
+        time_bound = datetime.now() - timedelta(days=1)
         links = get_links(board)
         result = get_data(links, time_bound)
         file_path = os.path.join('crawlers', 'data', 'ltn', f'{board}.json')

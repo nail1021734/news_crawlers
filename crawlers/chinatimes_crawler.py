@@ -87,7 +87,7 @@ if __name__ == "__main__":
         'taiwan'
     ]
     for b_name in tqdm(board_list):
-        time_bound = datetime.now() - timedelta(days=7)
+        time_bound = datetime.now() - timedelta(days=1)
         links = get_links(b_name, time_bound)
         result = get_data(links)
         with open(f'crawlers/data/chinatimes/{b_name}.json', 'w', encoding='utf8') as output_file:

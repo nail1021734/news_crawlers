@@ -83,7 +83,7 @@ if __name__ == "__main__":
     interval = 100
     save_path = os.path.join('crawlers', 'data', 'uni')
     for i in tqdm(range(1, 461, interval)):
-        time_bound = datetime.now() - timedelta(days=7)
+        time_bound = datetime.now() - timedelta(days=1)
         filename = time_bound.strftime('%Y%m%d') + '.json'
         file_path = os.path.join(save_path, filename)
         links = get_links(i, i + interval, last_time=time_bound)

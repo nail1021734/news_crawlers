@@ -115,7 +115,7 @@ if __name__ == '__main__':
         ['公共政策', 22168]
     ]
     for b in tqdm(board):
-        time_bound = datetime.now() - timedelta(days=7)
+        time_bound = datetime.now() - timedelta(days=1)
         links = get_links(b, time_bound)
         data = get_data(links)
-        json.dump(data, open(f'crawler/data/storm/{b[0]}_{time_bound.strftime("%Y%m%d")}.json', 'w', encoding='utf8'))
+        json.dump(data, open(f'crawlers/data/storm/{b[0]}_{time_bound.strftime("%Y%m%d")}.json', 'w', encoding='utf8'))
